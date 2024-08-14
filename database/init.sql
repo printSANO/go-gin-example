@@ -1,0 +1,9 @@
+-- Table for storing user information
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    user_name VARCHAR(50) NOT NULL,
+    password VARCHAR(100) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
