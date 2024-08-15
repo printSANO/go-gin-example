@@ -2,7 +2,6 @@ package database
 
 import (
 	"database/sql"
-	"fmt"
 
 	"github.com/printSANO/go-gin-example/logger"
 )
@@ -13,11 +12,11 @@ type DB struct {
 	*sql.DB
 }
 
+// 데이터베이스 연결 초기 함수
 func Init(driverName string) {
 	SQLDB, err := NewSQLDB(driverName)
 	if err != nil {
-		logger.Clog.Println("데이터베이스에 연결을 실패했습니다.")
-		panic(fmt.Errorf("데이터베이스 연결을 실패했습니다. 이유: \n%v", err))
+		logger.Clog.Fatalln("데이터베이스에 연결을 실패했습니다.")
 	}
 	defer func() {
 		if err = SQLDB.Close(); err != nil {

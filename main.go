@@ -8,6 +8,7 @@ import (
 	"github.com/printSANO/go-gin-example/logger"
 )
 
+// 앱에서 가장 먼저 실행되는 함수
 func main() {
 	fmt.Println("Hello, World!")
 	logger.Clog.Println("Hello, Debug!")
