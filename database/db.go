@@ -13,12 +13,7 @@ import (
 func SetupDatabase() *gorm.DB {
 	config.LoadEnvFile(".env")
 	dsn := fmt.Sprintf(
-		`host=%s 
-		user=%s
-		password=%s 
-		dbname=%s 
-		port=%s 
-		sslmode=%s`,
+		"host=%s user=%s password=%s dbname=%s port=%s sslmode=%s",
 		config.GetEnvVarAsString("DB_HOST", "localhost"),
 		config.GetEnvVarAsString("DB_USER", "ryan"),
 		config.GetEnvVarAsString("DB_PASSWORD", "1234"),
